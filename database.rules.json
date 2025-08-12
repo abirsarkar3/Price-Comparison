@@ -1,0 +1,34 @@
+{
+  "rules": {
+    "userLocations": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "userPreferences": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "searchHistory": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "platformAvailability": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "priceComparisons": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "realtimeUpdates": {
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}

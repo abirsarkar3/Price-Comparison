@@ -1,0 +1,13 @@
+{
+  "name": "PriceCompare",
+  "description": "Price comparison platform for groceries and food delivery",
+  "version": "1.0.0",
+  "devtools": {
+    "enabled": true,
+    "features": {
+      "priceComparison": true,
+      "cartOptimization": true,
+      "aiAssistant": true
+    }
+  }
+} 

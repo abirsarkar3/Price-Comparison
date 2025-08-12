@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User locations - users can only read/write their own location
+    match /userLocations/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // User preferences - users can only read/write their own preferences
+    match /userPreferences/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Search history - users can only read/write their own search history
+    match /searchHistory/{docId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Platform availability - public read, authenticated write
+    match /platformAvailability/{location} {
+      allow read: if true; // Public read access
+      allow write: if request.auth != null; // Only authenticated users can write
+    }
+    
+    // Price comparisons - public read, authenticated write
+    match /priceComparisons/{docId} {
+      allow read: if true; // Public read access for price data
+      allow create: if request.auth != null; // Only authenticated users can create
+      allow update, delete: if false; // No updates or deletions allowed
+    }
+    
+    // Default rule - deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
