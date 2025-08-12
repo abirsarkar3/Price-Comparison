@@ -45,7 +45,7 @@ export async function fetchInstamartPrices(item: string, city: string, pincode: 
     });
     
     console.log("🌐 Swiggy Instamart: Navigating to homepage...");
-    await page.goto("https://www.swiggy.com/instamart", { 
+    await page.goto("https://www.swiggy.com/instamart/", { 
       waitUntil: "domcontentloaded",
       timeout: 30000 
     });

@@ -59,7 +59,7 @@ export async function fetchSwiggyPrices(item: string, city: string, pincode: str
     }
     
     // Navigate to search page - using the correct Swiggy search URL
-    const searchUrl = `https://www.swiggy.com/search?query=${encodeURIComponent(item)}`;
+    const searchUrl = `https://www.swiggy.com/search?query=${encodeURIComponent(item)}&location=${encodeURIComponent(city)}`;
     console.log(`🔍 Swiggy: Searching at ${searchUrl}`);
     await page.goto(searchUrl, { 
       waitUntil: "domcontentloaded",

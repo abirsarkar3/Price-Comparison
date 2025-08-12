@@ -49,7 +49,7 @@ export async function handleLocationModal(page: Page, pincode: string, platformN
         }
       }
       
-      await page.waitForTimeout(2000);
+      await new Promise(resolve => setTimeout(resolve, 2000));
     }
   } catch (e) {
     // If modal doesn't appear or fails, continue

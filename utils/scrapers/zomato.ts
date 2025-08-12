@@ -59,7 +59,7 @@ export async function fetchZomatoPrices(item: string, city: string, pincode: str
     }
     
     // Navigate to search page - using the correct Zomato search URL
-    const searchUrl = `https://www.zomato.com/search?q=${encodeURIComponent(item)}`;
+    const searchUrl = `https://www.zomato.com/search?q=${encodeURIComponent(item)}&location=${encodeURIComponent(city)}`;
     console.log(`🔍 Zomato: Searching at ${searchUrl}`);
     await page.goto(searchUrl, { 
       waitUntil: "domcontentloaded",

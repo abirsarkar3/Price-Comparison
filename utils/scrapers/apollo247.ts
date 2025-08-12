@@ -49,7 +49,7 @@ export async function fetchApollo247Prices(item: string, city: string, pincode: 
     });
     
     console.log("🌐 Apollo 24|7: Navigating to homepage...");
-    await page.goto("https://www.apollo247.com/", { 
+    await page.goto("https://www.apollopharmacy.in/", { 
       waitUntil: "domcontentloaded",
       timeout: 30000 
     });
@@ -96,12 +96,12 @@ export async function fetchApollo247Prices(item: string, city: string, pincode: 
       } else {
         console.log("⚠️ Apollo 24|7: No search box found, trying direct URL...");
         // Fallback: try direct search URL
-        const searchUrl = `https://www.apollo247.com/search?q=${encodeURIComponent(item)}`;
+        const searchUrl = `https://www.apollopharmacy.in/search?q=${encodeURIComponent(item)}`;
         await page.goto(searchUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
       }
     } catch (error) {
       console.log("⚠️ Apollo 24|7: Search box interaction failed, trying direct URL...");
-      const searchUrl = `https://www.apollo247.com/search?q=${encodeURIComponent(item)}`;
+              const searchUrl = `https://www.apollopharmacy.in/search?q=${encodeURIComponent(item)}`;
       await page.goto(searchUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
     }
     

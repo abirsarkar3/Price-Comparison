@@ -45,7 +45,7 @@ export async function fetchZeptoPrices(item: string, city: string, pincode: stri
     });
     
     console.log("🌐 Zepto: Navigating to homepage...");
-    await page.goto("https://www.zepto.in/", { 
+    await page.goto("https://www.zeptonow.com/", { 
       waitUntil: "domcontentloaded",
       timeout: 30000 
     });
@@ -59,7 +59,7 @@ export async function fetchZeptoPrices(item: string, city: string, pincode: stri
     }
     
     // Navigate to search page - using the correct Zepto search URL
-    const searchUrl = `https://www.zepto.in/search?q=${encodeURIComponent(item)}`;
+    const searchUrl = `https://www.zeptonow.com/search?q=${encodeURIComponent(item)}`;
     console.log(`🔍 Zepto: Searching at ${searchUrl}`);
     await page.goto(searchUrl, { 
       waitUntil: "domcontentloaded",
