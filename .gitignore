@@ -48,6 +48,20 @@ Thumbs.db
 .firebase/
 firebase-debug.log
 firebase-debug.*.log
+lib/firebase-admin-key.json
+**/firebase-admin-key.json
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!next.config.mjs
+!postcss.config.mjs
+!tailwind.config.js
+!components.json
+!.firebaserc
+!firebase.json
+!firestore.rules
+!database.rules.json
 
 # Puppeteer
 .local-chromium/
